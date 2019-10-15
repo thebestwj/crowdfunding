@@ -1,0 +1,19 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/funding?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+server:
+  port: 9001
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.wj.funding.admin.model
+logging:
+  file: demo.log

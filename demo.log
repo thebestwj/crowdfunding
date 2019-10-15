@@ -1,0 +1,94 @@
+2019-10-15 21:45:41.412  INFO 10376 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Starting FundingAdmin1WebApplication on admin-PC with PID 10376 (D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web\target\classes started by admin in D:\ideaworkspace\funding-admin-01-parent)
+2019-10-15 21:45:41.415  INFO 10376 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : No active profile set, falling back to default profiles: default
+2019-10-15 21:45:41.465  INFO 10376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-15 21:45:41.465  INFO 10376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-15 21:45:42.466  INFO 10376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9001 (http)
+2019-10-15 21:45:42.481  INFO 10376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 21:45:42.481  INFO 10376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-15 21:45:42.560  INFO 10376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 21:45:42.561  INFO 10376 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1095 ms
+2019-10-15 21:45:42.891  INFO 10376 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 21:45:43.020  INFO 10376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-15 21:45:43.052  INFO 10376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9001 (http) with context path ''
+2019-10-15 21:45:43.055  INFO 10376 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Started FundingAdmin1WebApplication in 1.951 seconds (JVM running for 2.502)
+2019-10-15 21:51:57.695  INFO 2984 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Starting FundingAdmin1WebApplication on admin-PC with PID 2984 (D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web\target\classes started by admin in D:\ideaworkspace\funding-admin-01-parent)
+2019-10-15 21:51:57.698  INFO 2984 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : No active profile set, falling back to default profiles: default
+2019-10-15 21:51:57.762  INFO 2984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-15 21:51:57.762  INFO 2984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-15 21:51:58.839  INFO 2984 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9001 (http)
+2019-10-15 21:51:58.863  INFO 2984 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 21:51:58.863  INFO 2984 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-15 21:51:58.939  INFO 2984 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 21:51:58.939  INFO 2984 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1177 ms
+2019-10-15 21:51:59.265  INFO 2984 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 21:51:59.403  INFO 2984 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-15 21:51:59.437  INFO 2984 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9001 (http) with context path ''
+2019-10-15 21:51:59.440  INFO 2984 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Started FundingAdmin1WebApplication in 2.076 seconds (JVM running for 2.74)
+2019-10-15 21:52:15.602  INFO 2984 --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-15 21:52:15.602  INFO 2984 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-15 21:52:15.607  INFO 2984 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-10-15 21:53:18.600  INFO 15028 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Starting FundingAdmin1WebApplication on admin-PC with PID 15028 (D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web\target\classes started by admin in D:\ideaworkspace\funding-admin-01-parent)
+2019-10-15 21:53:18.604  INFO 15028 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : No active profile set, falling back to default profiles: default
+2019-10-15 21:53:18.651  INFO 15028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-15 21:53:18.651  INFO 15028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-15 21:53:19.729  INFO 15028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9001 (http)
+2019-10-15 21:53:19.745  INFO 15028 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 21:53:19.745  INFO 15028 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-15 21:53:19.818  INFO 15028 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 21:53:19.818  INFO 15028 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1167 ms
+2019-10-15 21:53:20.165  INFO 15028 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 21:53:20.297  INFO 15028 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-15 21:53:20.330  INFO 15028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9001 (http) with context path ''
+2019-10-15 21:53:20.332  INFO 15028 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Started FundingAdmin1WebApplication in 2.058 seconds (JVM running for 2.642)
+2019-10-15 21:53:28.311  INFO 15028 --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-15 21:53:28.312  INFO 15028 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-15 21:53:28.317  INFO 15028 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-10-15 21:53:46.411  INFO 13676 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Starting FundingAdmin1WebApplication on admin-PC with PID 13676 (D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web\target\classes started by admin in D:\ideaworkspace\funding-admin-01-parent)
+2019-10-15 21:53:46.414  INFO 13676 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : No active profile set, falling back to default profiles: default
+2019-10-15 21:53:46.461  INFO 13676 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-15 21:53:46.461  INFO 13676 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-15 21:53:47.537  INFO 13676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9001 (http)
+2019-10-15 21:53:47.558  INFO 13676 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 21:53:47.559  INFO 13676 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-15 21:53:47.633  INFO 13676 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 21:53:47.633  INFO 13676 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1172 ms
+2019-10-15 21:53:47.985  INFO 13676 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 21:53:48.138  INFO 13676 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-15 21:53:48.177  INFO 13676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9001 (http) with context path ''
+2019-10-15 21:53:48.179  INFO 13676 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Started FundingAdmin1WebApplication in 2.071 seconds (JVM running for 2.648)
+2019-10-15 21:53:50.907  INFO 13676 --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-15 21:53:50.907  INFO 13676 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-15 21:53:50.910  INFO 13676 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-15 21:53:50.922  WARN 13676 --- [http-nio-9001-exec-1] c.w.f.a.w.controller.DefaultController   : test
+2019-10-15 22:05:52.793  INFO 14972 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Starting FundingAdmin1WebApplication on admin-PC with PID 14972 (D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web\target\classes started by admin in D:\ideaworkspace\funding-admin-01-parent)
+2019-10-15 22:05:52.800  INFO 14972 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : No active profile set, falling back to default profiles: default
+2019-10-15 22:05:52.859  INFO 14972 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-15 22:05:52.859  INFO 14972 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-15 22:05:53.923  INFO 14972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9001 (http)
+2019-10-15 22:05:53.938  INFO 14972 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 22:05:53.938  INFO 14972 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-15 22:05:54.019  INFO 14972 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 22:05:54.020  INFO 14972 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1160 ms
+2019-10-15 22:05:54.362  INFO 14972 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 22:05:54.493  INFO 14972 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-15 22:05:54.526  INFO 14972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9001 (http) with context path ''
+2019-10-15 22:05:54.528  INFO 14972 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Started FundingAdmin1WebApplication in 2.101 seconds (JVM running for 2.769)
+2019-10-15 22:06:00.613  INFO 14972 --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-15 22:06:00.613  INFO 14972 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-15 22:06:00.617  INFO 14972 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-10-15 22:06:31.688  INFO 15352 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Starting FundingAdmin1WebApplication on admin-PC with PID 15352 (D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web\target\classes started by admin in D:\ideaworkspace\funding-admin-01-parent)
+2019-10-15 22:06:31.691  INFO 15352 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : No active profile set, falling back to default profiles: default
+2019-10-15 22:06:31.744  INFO 15352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-15 22:06:31.744  INFO 15352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-15 22:06:32.825  INFO 15352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9001 (http)
+2019-10-15 22:06:32.846  INFO 15352 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-15 22:06:32.847  INFO 15352 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-15 22:06:32.917  INFO 15352 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-15 22:06:32.918  INFO 15352 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1174 ms
+2019-10-15 22:06:33.248  INFO 15352 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-15 22:06:33.381  INFO 15352 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-15 22:06:33.414  INFO 15352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9001 (http) with context path ''
+2019-10-15 22:06:33.416  INFO 15352 --- [restartedMain] c.w.f.a.web.FundingAdmin1WebApplication  : Started FundingAdmin1WebApplication in 2.046 seconds (JVM running for 2.704)
+2019-10-15 22:06:38.020  INFO 15352 --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-15 22:06:38.020  INFO 15352 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-15 22:06:38.024  INFO 15352 --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms

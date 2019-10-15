@@ -1,4 +1,4 @@
-package com.wj.funding.fundingadmin1web;
+package com.wj.funding.admin.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

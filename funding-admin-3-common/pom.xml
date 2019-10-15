@@ -11,12 +11,5 @@
 
     <artifactId>funding-admin-3-common</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.wj.funding</groupId>
-            <artifactId>funding-admin-4-dao</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
 </project>
