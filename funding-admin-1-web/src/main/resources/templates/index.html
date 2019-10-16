@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml"></html>
-<html	  xmlns:th="http://www.thymeleaf.org"></html>
+<html lang="UTF-8"></html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -107,9 +107,12 @@ h3.break>a {
 				</div>
             <div id="navbar" class="navbar-collapse collapse" style="float:right;">
               <ul class="nav navbar-nav navbar-right">
-                <li><a th:text="${msg}" href="login">登录</a></li>
+                <li><a href="login">登录</a></li>
                 <li><a href="reg">注册</a></li>
-              </ul>
+				  <li><a>|</a></li>
+				  <li><a href="admin/to/login">管理员登录</a></li>
+
+			  </ul>
             </div>
 			  </div>
 			</nav>

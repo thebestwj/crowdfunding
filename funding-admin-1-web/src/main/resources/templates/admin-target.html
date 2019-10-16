@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>hahaha</p>
+<tr th:each="item:${list}">
+    <td th:text="${item.getId()}">Onions</td>
+    <td th:text="${item.getUsername()}">2.41</td>
+    <td th:text="${item.getEmail()}">yes</td>
+</tr>
+</body>
+</html>

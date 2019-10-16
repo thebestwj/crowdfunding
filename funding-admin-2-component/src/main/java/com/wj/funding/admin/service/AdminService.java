@@ -11,4 +11,5 @@ import java.util.List;
  */
 public interface AdminService {
     List<adminDO> getAll();
+    adminDO login(String name,String pw);
 }
