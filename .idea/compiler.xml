@@ -10,6 +10,7 @@
         <module name="funding-admin-2-component" />
         <module name="fundingadminreverse" />
         <module name="funding-admin-3-common" />
+        <module name="funding-admin-reverse" />
         <module name="funding-admin-1-web" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="funding-admin-1-web" options="-parameters" />
       <module name="funding-admin-2-component" options="-parameters" />
       <module name="funding-admin-3-common" options="-parameters" />
+      <module name="funding-admin-reverse" options="-parameters" />
       <module name="fundingadminreverse" options="-parameters" />
     </option>
   </component>

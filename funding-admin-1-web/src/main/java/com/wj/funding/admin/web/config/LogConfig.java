@@ -1,4 +1,4 @@
-package com.wj.funding.admin.web;
+package com.wj.funding.admin.web.config;
 
 import org.springframework.context.annotation.Configuration;
 

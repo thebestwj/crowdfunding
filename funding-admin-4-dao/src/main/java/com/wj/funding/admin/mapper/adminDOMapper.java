@@ -3,8 +3,13 @@ package com.wj.funding.admin.mapper;
 import com.wj.funding.admin.model.adminDO;
 import com.wj.funding.admin.model.adminDOExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Mapper
 public interface adminDOMapper {
     long countByExample(adminDOExample example);
 
