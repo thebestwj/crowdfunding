@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title>ERROR</title>
+</head>
+<body>
+
+<h1>Error Page</h1>
+<h2><span th:text="${#request.getAttribute('EXCEPTION')}"></span></h2>
+<h2><span th:text="${#session?.getAttribute('EXCEPTION')}"></span></h2>
+</body>
+</html>

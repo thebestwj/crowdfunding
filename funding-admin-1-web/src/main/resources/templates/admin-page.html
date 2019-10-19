@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:replace="@{/common/head.html}"></head>
+
+<script src="script/jquery.pagination.js"></script>
+<script th:inline="javascript">
+    $(function(){
+        //这是一个非常简单的demo实例，让列表元素分页显示
+        //回调函数的作用是显示对应分页的列表项内容
+        //回调函数在用户每次点击分页链接的时候执行
+        //参数page_index{int整型}表示当前的索引页
+        var totalpage = [[${pageInfo.getTotal()}]];
+        var initPagination = function() {
+            var num_entries = $("#hiddenresult div.result").length;
+            // 创建分页
+            $("#Pagination").pagination(totalpage, {
+                num_edge_entries: 3 , //边缘页数
+                num_display_entries: 5, //主体页数
+                callback: pageselectCallback,
+                current_page:[[${pageInfo.getPageNum()} - 1]],
+                items_per_page:[[${pageInfo.getPageSize()}]], //每页显示1项
+                next_text:"下一页",
+                prev_text:"上一页",
+            });
+        }();
+
+        function pageselectCallback(page_index, jq){
+            var pageNum = page_index + 1;
+            var keyword = [[${param.keyword==null?'':param.keyword}]];
+            window.location.href="/admin/query/for/search?keyword="+keyword+"&pageNum="+ pageNum;
+            return false;
+        }
+    });
+</script>
+
+<body>
+
+<div th:include="@{/common/nav.html}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div th:include="@{/common/sidebar.html}"></div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <form class="form-inline" role="form" style="float:left;" action="/admin/query/for/search">
+                <div class="form-group has-feedback">
+                    <div class="input-group">
+                        <div class="input-group-addon">查询条件</div>
+                        <input th:value="${param.keyword==null?'':param.keyword}" name="keyword" class="form-control has-success" type="text" placeholder="请输入查询条件">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
+            </form>
+
+            <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
+            <button type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='add.html'"><i class="glyphicon glyphicon-plus"></i> 新增</button>
+            <br>
+
+            <hr style="clear:both;">
+            <div class="table-responsive">
+                <table class="table  table-bordered">
+                    <thead>
+                    <tr >
+                        <th width="30">#</th>
+                        <th width="30"><input type="checkbox"></th>
+                        <th>账号</th>
+                        <th>名称</th>
+                        <th>邮箱地址</th>
+                        <th width="100">操作</th>
+                    </tr>
+                    </thead>
+                        <span th:if="${pageInfo == null || pageInfo.getSize() < 1}">
+                            <tr>
+                                <td colspan="6" style="text-align: center" >No result!</td>
+                            </tr>
+                        </span>
+                    <tbody>
+                    <tr th:each="user:${pageInfo.getList()}">
+                        <td th:text="${user.id}"></td>
+                        <td><input type="checkbox"></td>
+                        <td th:text="${user.loginacct}"></td>
+                        <td th:text="${user.username}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td>
+                            <button type="button" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-check"></i></button>
+                            <button type="button" class="btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>
+                            <button type="button" class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                    <tfoot>
+
+
+                    <tr>
+                        <td colspan="6" align="center">
+                            <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
+
+                        </td>
+                    </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <table style="border: red" border="1">
+                <tr><td>NO</td><td>mid</td> <td>姓名</td><td>年龄</td></tr>
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

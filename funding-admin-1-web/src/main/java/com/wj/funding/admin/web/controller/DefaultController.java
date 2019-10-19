@@ -27,6 +27,6 @@ public class DefaultController {
 
     @RequestMapping("/t")
     String test(){
-        return "index";
+        throw new RuntimeException("an runtime exception");
     }
 }

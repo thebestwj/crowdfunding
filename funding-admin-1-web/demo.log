@@ -1,0 +1,98 @@
+2019-10-19 15:55:36.896  INFO 5512 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 5512 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 15:55:36.897  INFO 5512 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 15:55:38.945  INFO 5512 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.485 seconds (JVM running for 3.316)
+2019-10-19 15:55:39.145  INFO 5512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 15:55:39.686  INFO 5512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 15:55:39.778  INFO 5512 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 15:55:39.780  INFO 5512 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 15:57:39.687  INFO 640 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 640 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 15:57:39.688  INFO 640 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 15:57:41.581  INFO 640 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.31 seconds (JVM running for 3.019)
+2019-10-19 15:57:41.737  INFO 640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 15:57:42.228  INFO 640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 15:57:42.332  INFO 640 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 15:57:42.341  INFO 640 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 15:58:34.819  INFO 8856 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 8856 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 15:58:34.820  INFO 8856 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 15:58:36.693  INFO 8856 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.305 seconds (JVM running for 3.018)
+2019-10-19 15:58:36.848  INFO 8856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 15:58:37.337  INFO 8856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 15:58:37.423  INFO 8856 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 15:58:37.425  INFO 8856 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 15:59:17.930  INFO 6320 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 6320 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 15:59:17.931  INFO 6320 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 15:59:19.883  INFO 6320 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.397 seconds (JVM running for 3.106)
+2019-10-19 15:59:20.049  INFO 6320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 15:59:20.580  INFO 6320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 15:59:20.681  INFO 6320 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 15:59:20.682  INFO 6320 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:13:35.588  INFO 11388 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 11388 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:13:35.590  INFO 11388 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:13:37.820  INFO 11388 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.68 seconds (JVM running for 3.497)
+2019-10-19 20:13:38.042  INFO 11388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:13:38.561  INFO 11388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:13:38.604  INFO 11388 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:13:38.606  INFO 11388 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:14:06.992  INFO 17128 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 17128 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:14:06.994  INFO 17128 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:14:09.089  INFO 17128 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.604 seconds (JVM running for 3.387)
+2019-10-19 20:14:09.333  INFO 17128 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:14:09.879  INFO 17128 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:14:09.924  INFO 17128 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:14:09.926  INFO 17128 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:15:10.606  INFO 6852 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 6852 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:15:10.607  INFO 6852 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:15:12.909  INFO 6852 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.765 seconds (JVM running for 3.619)
+2019-10-19 20:15:13.349  INFO 6852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:15:13.957  INFO 6852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:15:14.015  INFO 6852 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:15:14.018  INFO 6852 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:18:01.562  INFO 16688 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 16688 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:18:01.563  INFO 16688 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:18:03.588  INFO 16688 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.447 seconds (JVM running for 3.194)
+2019-10-19 20:18:03.787  INFO 16688 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:18:04.322  INFO 16688 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:18:04.361  INFO 16688 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:18:04.362  INFO 16688 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:23:09.232  INFO 420 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 420 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:23:09.234  INFO 420 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:23:11.332  INFO 420 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.563 seconds (JVM running for 3.396)
+2019-10-19 20:23:11.542  INFO 420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:23:12.054  INFO 420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:23:12.098  INFO 420 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:23:12.100  INFO 420 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:23:18.421  INFO 16700 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 16700 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:23:18.424  INFO 16700 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:23:20.465  INFO 16700 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.455 seconds (JVM running for 3.213)
+2019-10-19 20:23:20.649  INFO 16700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:23:21.162  INFO 16700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:23:21.209  INFO 16700 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:23:21.211  INFO 16700 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:32:00.383  INFO 5548 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 5548 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:32:00.384  INFO 5548 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:32:02.555  INFO 5548 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.663 seconds (JVM running for 3.469)
+2019-10-19 20:32:02.757  INFO 5548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:32:03.297  INFO 5548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:32:03.346  INFO 5548 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:32:03.348  INFO 5548 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:33:02.801  INFO 15312 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 15312 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:33:02.803  INFO 15312 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:33:05.021  INFO 15312 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.684 seconds (JVM running for 3.464)
+2019-10-19 20:33:05.237  INFO 15312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:33:05.767  INFO 15312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:33:05.844  INFO 15312 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:33:05.847  INFO 15312 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:42:01.158  INFO 8248 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 8248 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:42:01.160  INFO 8248 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:42:03.121  INFO 8248 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.414 seconds (JVM running for 3.219)
+2019-10-19 20:42:03.308  INFO 8248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:42:03.845  INFO 8248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:42:03.934  INFO 8248 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:42:03.936  INFO 8248 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-19 20:44:28.573  INFO 8616 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Starting AdminServiceImpTest on admin-PC with PID 8616 (started by admin in D:\ideaworkspace\funding-admin-01-parent\funding-admin-1-web)
+2019-10-19 20:44:28.574  INFO 8616 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : No active profile set, falling back to default profiles: default
+2019-10-19 20:44:30.929  INFO 8616 --- [main] c.w.f.a.web.test.AdminServiceImpTest     : Started AdminServiceImpTest in 2.837 seconds (JVM running for 3.675)
+2019-10-19 20:44:31.122  INFO 8616 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-19 20:44:31.672  INFO 8616 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-19 20:44:31.763  INFO 8616 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-19 20:44:31.766  INFO 8616 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
