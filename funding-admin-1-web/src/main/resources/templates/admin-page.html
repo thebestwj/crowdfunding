@@ -12,6 +12,22 @@
         //回调函数的作用是显示对应分页的列表项内容
         //回调函数在用户每次点击分页链接的时候执行
         //参数page_index{int整型}表示当前的索引页
+
+        $("#summaryBox").click(function(){
+            $(".itemBox").prop("checked",this.checked);
+        });
+
+        var adminIdArr = [];
+        $("#batchRemoveBtn").click(function () {
+            $(".itemBox:checked").each(function () {
+                var adminId= $(this).attr("adminId");
+                adminIdArr.push(adminId);
+            })
+
+            alert(adminIdArr);
+        });
+
+
         var totalpage = [[${pageInfo.getTotal()}]];
         var initPagination = function() {
             var num_entries = $("#hiddenresult div.result").length;
@@ -26,6 +42,8 @@
                 prev_text:"上一页",
             });
         }();
+
+
 
         function pageselectCallback(page_index, jq){
             var pageNum = page_index + 1;
@@ -54,7 +72,7 @@
                 <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
             </form>
 
-            <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
+            <button id="batchRemoveBtn"  type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
             <button type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='add.html'"><i class="glyphicon glyphicon-plus"></i> 新增</button>
             <br>
 
@@ -64,7 +82,7 @@
                     <thead>
                     <tr >
                         <th width="30">#</th>
-                        <th width="30"><input type="checkbox"></th>
+                        <th width="30"><input id="summaryBox" type="checkbox"></th>
                         <th>账号</th>
                         <th>名称</th>
                         <th>邮箱地址</th>
@@ -79,7 +97,7 @@
                     <tbody>
                     <tr th:each="user:${pageInfo.getList()}">
                         <td th:text="${user.id}"></td>
-                        <td><input type="checkbox"></td>
+                        <td><input th:adminId="${user.id}" class="itemBox" type="checkbox"></td>
                         <td th:text="${user.loginacct}"></td>
                         <td th:text="${user.username}"></td>
                         <td th:text="${user.email}"></td>
