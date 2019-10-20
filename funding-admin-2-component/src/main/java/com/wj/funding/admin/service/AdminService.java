@@ -16,4 +16,5 @@ public interface AdminService {
     adminDO login(String name,String pw);
     int addOne(adminDO adminDO);
     PageInfo<adminDO> keyWordSearch(Integer pageNum, Integer pageSize,String keyword);
+    void batchRemove(List<Integer> adminArr);
 }

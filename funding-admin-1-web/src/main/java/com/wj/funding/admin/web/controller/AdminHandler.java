@@ -1,7 +1,9 @@
 package com.wj.funding.admin.web.controller;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
 import com.github.pagehelper.PageInfo;
 import com.wj.funding.admin.model.adminDO;
+import com.wj.funding.admin.result.ResultEntity;
 import com.wj.funding.admin.service.AdminService;
 import com.wj.funding.admin.utils.AdminConst;
 import lombok.extern.slf4j.Slf4j;
@@ -11,9 +13,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
@@ -28,11 +28,29 @@ import java.util.List;
 @Controller
 @Slf4j
 @Transactional
+@RequestMapping("/admin/")
 public class AdminHandler {
     @Autowired
     AdminService adminService;
 
-    @RequestMapping("admin/query/for/search")
+
+    @ResponseBody
+    @PostMapping("batch/remove")
+    public ResultEntity batchRemove(@RequestBody List<Integer> adminArr){
+
+        try {
+
+            adminService.batchRemove(adminArr);
+            return ResultEntity.successWithoutData();
+        }catch (Exception e){
+
+            return ResultEntity.failed(null,e.getMessage());
+        }
+
+    }
+
+
+    @RequestMapping("query/for/search")
     public String queryForSearch(
             @RequestParam(defaultValue = "1") Integer pageNum,
             @RequestParam(defaultValue = "10") Integer pageSize,
@@ -44,14 +62,14 @@ public class AdminHandler {
         return "admin-page";
     }
 
-    @RequestMapping("/admin/get/all")
+    @RequestMapping("get/all")
     public String getAll(Model model) {
         List<adminDO> list = adminService.getAll();
         model.addAttribute("list", list);
         return "admin-target";
     }
 
-    @PostMapping("/admin/do/login")
+    @PostMapping("do/login")
     public String doLogin(
             @RequestParam("loginAcct") String loginAcct,
             @RequestParam("userPswd") String userPswd,
@@ -69,12 +87,12 @@ public class AdminHandler {
         return "redirect:/admin/main";
     }
 
-    @RequestMapping("admin/main")
+    @RequestMapping("main")
     String adminmain(){
         return "admin-main";
     }
 
-    @RequestMapping("/admin/logout")
+    @RequestMapping("logout")
     String logout(HttpSession httpSession){
         httpSession.invalidate();
         return "redirect:/index.html";

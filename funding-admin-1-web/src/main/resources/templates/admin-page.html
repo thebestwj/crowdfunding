@@ -22,9 +22,24 @@
             $(".itemBox:checked").each(function () {
                 var adminId= $(this).attr("adminId");
                 adminIdArr.push(adminId);
+            });
+
+            var requestbody = JSON.stringify(adminIdArr);
+
+            $.ajax({
+                "url":"admin/batch/remove",
+                "type":"post",
+                "contentType":"application/json:charset=UTF-8",
+                "data":requestbody,
+                "dataType":"json",
+                "success": function (response) {
+                    alert(response);
+                },
+                "error": function (response) {
+
+                }
             })
 
-            alert(adminIdArr);
         });
 
 
