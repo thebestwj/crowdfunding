@@ -26,3 +26,5 @@ mybatis:
   type-aliases-package: com.wj.funding.admin.model
 logging:
   file: demo.log
+  level:
+    root: warn

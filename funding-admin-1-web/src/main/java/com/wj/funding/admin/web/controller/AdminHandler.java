@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
@@ -33,6 +34,25 @@ public class AdminHandler {
     @Autowired
     AdminService adminService;
 
+    @GetMapping("edit/{id}")
+    public ModelAndView editAdmin(@PathVariable(value = "id") Integer id){
+        try{
+            adminDO adminDO = adminService.getAdminById(id);
+            ModelAndView mav = new ModelAndView();
+            mav.addObject("user",adminDO);
+            mav.setViewName("admin-edit");
+            return  mav;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
+    @PostMapping("update")
+    public String update(adminDO adminDO){
+        adminService.updateAdmin(adminDO);
+        return "admin-page";
+    }
 
     @ResponseBody
     @PostMapping("batch/remove")
@@ -68,6 +88,19 @@ public class AdminHandler {
         model.addAttribute("list", list);
         return "admin-target";
     }
+
+
+    @PostMapping("admin/do/add")
+    public String addAdmin(adminDO adminDO){
+        try {
+            adminService.saveAdmin(adminDO);
+        }catch (Exception e){
+
+        }
+        return "redirect:admin-page";
+    }
+
+
 
     @PostMapping("do/login")
     public String doLogin(

@@ -1,0 +1,108 @@
+<script th:inline="javascript">
+    $(function(){
+        //这是一个非常简单的demo实例，让列表元素分页显示
+        //回调函数的作用是显示对应分页的列表项内容
+        //回调函数在用户每次点击分页链接的时候执行
+        //参数page_index{int整型}表示当前的索引页
+
+        $("#summaryBox").click(function(){
+            $(".itemBox").prop("checked",this.checked);
+        });
+
+
+        $("#batchRemoveBtn").click(function () {
+            var adminIdArr = [];
+            var loginAcctArray =[];
+
+            $(".itemBox:checked").each(function () {
+
+                var adminId= $(this).attr("adminId");
+                adminIdArr.push(adminId);
+                var loginAcct = $(this)				// 当前checkbox对象
+                    .parent("td")	// 包含checkbox的td
+                    .next()			// 当前td的下一个兄弟元素，也就是下一个td
+                    .text();		// 下一个td的标签内部的文本
+
+                loginAcctArray.push(loginAcct);
+            });
+
+            // 检查adminIdArray是否包含有效数据
+            if(adminIdArr.length == 0) {
+                // 给出提示
+                alert("请勾选您要删除的记录！");
+                // 函数停止执行
+                return ;
+            }
+            // 给出确认提示，让用户确认是否真的删除这两条记录
+            var confirmResult = confirm("您真的要删除"+loginAcctArray+"信息吗？操作不可逆，请谨慎决定！");
+            // 如果用户点击了取消，那么让函数停止执行
+            if(!confirmResult) {
+                return ;
+            }
+
+            doBatchRemove(adminIdArr);
+
+        });
+
+        $(".uniqueRemoveBtn").click(function(){
+            // 获取当前adminId值
+            var adminId = $(this).attr("adminId");
+            // 获取当前记录的loginAcct
+            var loginAcct = $(this).parents("tr").children("td:eq(2)").text();
+            var confirmResult = confirm("您真的要删除"+loginAcct+"这条记录吗？" + adminId);
+            if(!confirmResult) {
+                return ;
+            }
+            // 为了能够使用批量删除的操作，将adminId存入数组
+            var adminIdArray = [];
+            adminIdArray.push(adminId);
+            // 调用专门封装的函数，执行批量删除
+            doBatchRemove(adminIdArray);
+        });
+
+
+        function doBatchRemove(adminIdArr) {
+            var requestbody = JSON.stringify(adminIdArr);
+
+            $.ajax({
+                "url": "admin/batch/remove",
+                "type": "post",
+                "contentType": "application/json;charset=UTF-8",
+                "data": requestbody,
+                "dataType": "json",
+                "success": function (response) {
+                    alert(response.message);
+                    window.location.href = "/admin/query/for/search?keyword=" + [[${param.keyword==null?'':param.keyword}]] + "&pageNum=1";
+                },
+                "error": function (response) {
+                    alert(response.message);
+                    return;
+                }
+            });
+        };
+
+        var totalpage = [[${pageInfo.getTotal()}]];
+        var initPagination = function() {
+            var num_entries = $("#hiddenresult div.result").length;
+            // 创建分页
+            $("#Pagination").pagination(totalpage, {
+                num_edge_entries: 3 , //边缘页数
+                num_display_entries: 5, //主体页数
+                callback: pageselectCallback,
+                current_page:[[${pageInfo.getPageNum()} - 1]],
+                items_per_page:[[${pageInfo.getPageSize()}]], //每页显示1项
+                next_text:"下一页",
+                prev_text:"上一页",
+            });
+        }();
+
+
+
+        function pageselectCallback(page_index, jq){
+            var pageNum = page_index + 1;
+            var keyword = [[${param.keyword==null?'':param.keyword}]];
+            window.location.href="/admin/query/for/search?keyword="+keyword+"&pageNum="+ pageNum;
+            return false;
+        }
+    });
+</script>

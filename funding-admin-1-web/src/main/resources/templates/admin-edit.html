@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="@{/common/head.html}"></head>
+
+<script>
+    $('#submitbtn').click(function () {
+        $.ajax({
+            "url": "admin/batch/remove",
+            "type": "post",
+            "contentType": "application/json;charset=UTF-8",
+            "data": //TODO ,
+            "dataType": "json",
+            "success": function (response) {
+                alert(response.message);
+                window.location.href = "/admin/query/for/search?keyword=" + [[${param.keyword==null?'':param.keyword}]] + "&pageNum=1";
+            },
+            "error": function (response) {
+                alert(response.message);
+                return;
+            }
+        });
+
+    })
+
+
+</script>
+
+
+
+
+
+<body>
+
+<div th:include="@{/common/nav.html}"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div th:include="@{/common/sidebar.html}"></div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">数据列表</a></li>
+                <li class="active">修改</li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">表单数据<div style="float:right;cursor:pointer;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-question-sign"></i></div></div>
+                <div class="panel-body">
+                    <form action="admin/update" method="post" modelAttribute="admin">
+                        <!-- 模型对象中包含的属性可以使用form:hidden -->
+                        <input type="hidden" th:value="${user.getId()}"/>
+
+                        <!-- 模型对象中没有的属性不能使用form:hidden -->
+<!--                        <input type="hidden" name="pageNum" value="${param.pageNum }" />-->
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">登录账号</label>
+                            <input name="loginAcct" th:value="${user.getLoginacct()}" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">登录密码</label>
+                            <input  readonly="readonly" type="password" name="userPswd" th:value="${user.getUserpswd()}" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">用户昵称</label>
+                            <input name="userName" th:value="${user.getUsername()}" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">邮箱地址</label>
+                            <input name="email" th:value="${user.getEmail()}" class="form-control"/>
+                        </div>
+                        <button id="submitbtn" type="button" class="btn btn-success">
+                            <i class="glyphicon glyphicon-edit"></i> 更新
+                        </button>
+
+                        <button type="reset" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-refresh"></i> 重置
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">帮助</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="bs-callout bs-callout-info">
+                            <h4>测试标题1</h4>
+                            <p>测试内容1，测试内容1，测试内容1，测试内容1，测试内容1，测试内容1</p>
+                        </div>
+                        <div class="bs-callout bs-callout-info">
+                            <h4>测试标题2</h4>
+                            <p>测试内容2，测试内容2，测试内容2，测试内容2，测试内容2，测试内容2</p>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

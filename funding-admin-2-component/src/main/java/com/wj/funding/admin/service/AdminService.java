@@ -17,4 +17,7 @@ public interface AdminService {
     int addOne(adminDO adminDO);
     PageInfo<adminDO> keyWordSearch(Integer pageNum, Integer pageSize,String keyword);
     void batchRemove(List<Integer> adminArr);
+    void saveAdmin(adminDO adminDO);
+    void updateAdmin(adminDO adminDO);
+    adminDO getAdminById(Integer id);
 }

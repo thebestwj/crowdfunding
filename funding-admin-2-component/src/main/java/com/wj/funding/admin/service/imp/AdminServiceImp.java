@@ -91,5 +91,26 @@ public class AdminServiceImp implements AdminService {
         adminDOMapper.deleteByExample(adminDOExample);
     }
 
+    @Override
+    @Transactional
+    public void saveAdmin(adminDO adminDO) {
+        String pw = MD5Tool.md5(adminDO.getUserpswd());
+        adminDO.setUserpswd(pw);
+        adminDO.setId(null);
+        adminDOMapper.insert(adminDO);
+    }
+
+    @Override
+    public void updateAdmin(adminDO adminDO){
+        adminDO.setUserpswd(adminDOMapper.selectByPrimaryKey(adminDO.getId()).getUserpswd());
+        adminDOMapper.updateByPrimaryKey(adminDO);
+
+    }
+
+    @Override
+    public adminDO getAdminById(Integer id) {
+        return adminDOMapper.selectByPrimaryKey(id);
+    }
+
 }
 

@@ -1,73 +1,9 @@
 <!DOCTYPE html>
 <html lang="UTF-8">
 <html xmlns:th="http://www.thymeleaf.org">
-
-
 <head th:replace="@{/common/head.html}"></head>
-
 <script src="script/jquery.pagination.js"></script>
-<script th:inline="javascript">
-    $(function(){
-        //这是一个非常简单的demo实例，让列表元素分页显示
-        //回调函数的作用是显示对应分页的列表项内容
-        //回调函数在用户每次点击分页链接的时候执行
-        //参数page_index{int整型}表示当前的索引页
-
-        $("#summaryBox").click(function(){
-            $(".itemBox").prop("checked",this.checked);
-        });
-
-        var adminIdArr = [];
-        $("#batchRemoveBtn").click(function () {
-            $(".itemBox:checked").each(function () {
-                var adminId= $(this).attr("adminId");
-                adminIdArr.push(adminId);
-            });
-
-            var requestbody = JSON.stringify(adminIdArr);
-
-            $.ajax({
-                "url":"admin/batch/remove",
-                "type":"post",
-                "contentType":"application/json:charset=UTF-8",
-                "data":requestbody,
-                "dataType":"json",
-                "success": function (response) {
-                    alert(response);
-                },
-                "error": function (response) {
-
-                }
-            })
-
-        });
-
-
-        var totalpage = [[${pageInfo.getTotal()}]];
-        var initPagination = function() {
-            var num_entries = $("#hiddenresult div.result").length;
-            // 创建分页
-            $("#Pagination").pagination(totalpage, {
-                num_edge_entries: 3 , //边缘页数
-                num_display_entries: 5, //主体页数
-                callback: pageselectCallback,
-                current_page:[[${pageInfo.getPageNum()} - 1]],
-                items_per_page:[[${pageInfo.getPageSize()}]], //每页显示1项
-                next_text:"下一页",
-                prev_text:"上一页",
-            });
-        }();
-
-
-
-        function pageselectCallback(page_index, jq){
-            var pageNum = page_index + 1;
-            var keyword = [[${param.keyword==null?'':param.keyword}]];
-            window.location.href="/admin/query/for/search?keyword="+keyword+"&pageNum="+ pageNum;
-            return false;
-        }
-    });
-</script>
+<script th:replace="@{/script/my-admin.html}"></script>
 
 <body>
 
@@ -88,7 +24,7 @@
             </form>
 
             <button id="batchRemoveBtn"  type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
-            <button type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='add.html'"><i class="glyphicon glyphicon-plus"></i> 新增</button>
+            <a href="/admin/to/add" class="btn btn-primary" style="float:right;" ><i class="glyphicon glyphicon-plus"></i> 新增</a>
             <br>
 
             <hr style="clear:both;">
@@ -117,17 +53,13 @@
                         <td th:text="${user.username}"></td>
                         <td th:text="${user.email}"></td>
                         <td>
-                            <button type="button" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-check"></i></button>
-                            <button type="button" class="btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>
-                            <button type="button" class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
+                            <button  type="button" class="btn btn-success btn-xs"><i th:adminId="${user.id}" class=" glyphicon glyphicon-check"></i></button>
+                            <a th:href="@{'/admin/edit/' + ${user.id}}" type="button" class="btn btn-primary btn-xs"><i  class=" glyphicon glyphicon-pencil"></i></a>
+                            <button  th:adminId="${user.id}" type="button" class="uniqueRemoveBtn btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
                         </td>
                     </tr>
-
                     </tbody>
-
                     <tfoot>
-
-
                     <tr>
                         <td colspan="6" align="center">
                             <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
