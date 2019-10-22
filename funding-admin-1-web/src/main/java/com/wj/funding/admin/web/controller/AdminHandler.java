@@ -9,6 +9,7 @@ import com.wj.funding.admin.utils.AdminConst;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,8 +51,12 @@ public class AdminHandler {
 
     @PostMapping("update")
     public String update(adminDO adminDO){
+        System.out.println(adminDO.getLoginacct());
+        System.out.println(adminDO.getUsername());
+        System.out.println(adminDO.getUserpswd());
+        System.out.println(adminDO.getEmail());
         adminService.updateAdmin(adminDO);
-        return "admin-page";
+        return "redirect:/admin/query/for/search";
     }
 
     @ResponseBody
@@ -90,14 +95,16 @@ public class AdminHandler {
     }
 
 
-    @PostMapping("admin/do/add")
+    @PostMapping("do/add")
     public String addAdmin(adminDO adminDO){
         try {
             adminService.saveAdmin(adminDO);
         }catch (Exception e){
-
+            if(e instanceof DuplicateKeyException){
+                throw new RuntimeException("账号被占用");
+            }
         }
-        return "redirect:admin-page";
+        return "redirect:/admin/query/for/search";
     }
 
 
