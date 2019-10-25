@@ -1,0 +1,427 @@
+<script type="text/javascript">
+
+    function showPage(){
+
+        console.log("showpage")
+
+        var pageInfo = getPageInfo();
+
+        if(pageInfo == null) return;
+
+        initGV(pageInfo);
+
+        generatePage(pageInfo);
+
+        initPagination(pageInfo);
+
+    }
+
+    function getPageInfo() {
+
+        // 以同步请求方式调用$.ajax()函数并获取返回值（返回值包含全部响应数据）
+        var ajaxResult = $.ajax({
+            "url":"role/search",
+            "type":"post",
+            "data":{
+                "pageNum":(window.pageNum == undefined)?1:window.pageNum,
+                "pageSize":(window.pageSize == undefined)?5:window.pageSize,
+                "keyword":(window.keyword == undefined)?"":window.keyword
+            },
+            "dataType":"json",
+            "async":false	// 为了保证getPageInfo()函数能够在Ajax请求拿到响应后获取PageInfo，需要设置为同步操作
+        });
+
+        // 从全部响应数据中获取JSON格式的响应体数据
+        var resultEntity = ajaxResult.responseJSON;
+
+        // 从响应体数据中获取result，判断当前请求是否成功
+        var result = resultEntity.result;
+
+        // 如果成功获取PageInfo
+        if(result == "SUCCESS") {
+            return resultEntity.data;
+        }
+
+        if(result == "FAILED") {
+            layer.msg(resultEntity.message);
+        }
+
+        return null;
+    }
+
+
+
+    function initGV(){
+        window.pageSize = 5;
+        window.pageNum = 1;
+        window.keyword = "";
+    }
+
+
+    function generatePage(pageInfo){
+        // 执行所有操作前先清空
+        $("#roleTableBody").empty();
+
+        // 获取数据集合
+        var list = pageInfo.list;
+
+        // 判断list是否有效
+        if(list == null || list.length == 0) {
+            $("#roleTableBody")
+                .append("<tr><td colspan='4' style='text-align:center;'>没有查询到数据！</td></tr>");
+
+            return ;
+        }
+
+        for(var i = 0; i < list.length; i++) {
+
+            var role = list[i];
+
+            var checkBtn = "<button type='button'  roleid='"+role.id+"' class='btn btn-success btn-xs'><i class=' glyphicon glyphicon-check'></i></button>";
+            var pencilBtn = "<button type='button' roleid='"+role.id+"' class='editBtn btn btn-primary btn-xs'><i class=' glyphicon glyphicon-pencil'></i></button>";
+            var removeBtn = "<button type='button' roleid='"+role.id+"' class='removeBtn btn btn-danger btn-xs'><i class=' glyphicon glyphicon-remove'></i></button>";
+
+            var numberTd = "<td>"+(i+1)+"</td>";
+            var checkBoxTd = "<td><input roleId='"+role.id+"' class='itemBox' type='checkbox'></td>";
+            var roleNameTd = "<td>"+role.name+"</td>";
+            var btnTd = "<td>"+checkBtn+" "+pencilBtn+" "+removeBtn+"</td>";
+
+            var tr = "<tr>"+numberTd+checkBoxTd+roleNameTd+btnTd+"</tr>";
+
+            // 将前面拼好的HTML代码追加到#roleTableBody中
+            $("#roleTableBody").append(tr);
+        }
+
+    }
+
+    function initPagination(pageInfo) {
+
+        // 声明变量存储分页导航条显示时的属性设置
+        var paginationProperties = {
+            num_edge_entries : 3,			//边缘页数
+            num_display_entries : 5,		//主体页数
+            callback : pageselectCallback,	//回调函数
+            items_per_page : window.pageSize,	//每页显示数据数量，就是pageSize
+            current_page : pageInfo.pageNum - 1 ,//当前页页码
+            prev_text : "上一页",			//上一页文本
+            next_text : "下一页"			//下一页文本
+        };
+
+        // 显示分页导航条
+        $("#Pagination").pagination(pageInfo.total, paginationProperties);
+    }
+
+    // 在每一次点击“上一页”、“下一页”、“页码”时执行这个函数跳转页面
+    function pageselectCallback(pageIndex,jq) {
+
+        // 将全局变量中的pageNum修改为最新值
+        // pageIndex从0开始，pageNum从1开始
+        window.pageNum = pageIndex + 1;
+
+        // 调用分页函数重新执行分页
+        showPage();
+
+        return false;
+    }
+
+
+    // 根据roleIdArray查询roleList
+    function getRoleListByRoleIdArray(roleIdArray) {
+
+        // 1.将roleIdArray转换成JSON字符串
+        var requestBody = JSON.stringify(roleIdArray);
+
+        // 2.发送Ajax请求
+        var ajaxResult = $.ajax({
+            "url":"role/get/list/by/id",
+            "type":"post",
+            "data":requestBody,
+            "contentType":"application/json;charset=UTF-8",
+            "dataType":"json",
+            "async":false
+        });
+
+        // 3.获取JSON对象类型的响应体
+        var resultEntity = ajaxResult.responseJSON;
+
+        // 4.验证是否成功
+        var result = resultEntity.result;
+
+        if(result == "SUCCESS") {
+
+            // 5.如果成功，则返回roleList
+            return resultEntity.data;
+        }
+
+        if(result == "FAILED") {
+            layer.msg(resultEntity.message);
+            return null;
+        }
+
+        return null;
+
+    }
+
+    function showRemoveConfirmModal() {
+
+        // 1.将模态框显示出来
+        $("#confirmModal").modal("show");
+
+        // 2.根据roleIdList获取roleList
+        var roleList = getRoleListByRoleIdArray(window.roleIdArray);
+
+        // 3.清空#confirmModalTableBody
+        $("#confirmModalTableBody").empty();
+
+        // 4.填充#confirmModalTableBody
+        for(var i = 0; i < roleList.length; i++) {
+
+            // 5.获取角色相关数据
+            var role = roleList[i];
+
+            var id = role.id;
+
+            var name = role.name;
+
+            var trHTML = "<tr><td>"+id+"</td><td>"+name+"</td></tr>";
+
+            // 6.执行填充
+            $("#confirmModalTableBody").append(trHTML);
+        }
+
+    }
+
+
+
+    $(function () {
+
+        $("#searchBtn").click(function(){
+            // 在单击响应函数中获取文本框中输入的数据
+            var keyword = $.trim($("#keywordInput").val());
+
+            // 验证输入数据是否有效
+            if(keyword == null) keyword = "";
+
+            // 如果有效，赋值给window.keyword
+            window.keyword = keyword;
+
+            // 调用showPage()重新分页
+            showPage();
+        });
+
+        // 全选/全不选功能
+        $("#summaryBox").click(function(){
+
+            // 1.获取当前checkbox的选中状态
+            var currentStatus = this.checked;
+
+            // 2.设置itemBox的选中状态
+            $(".itemBox").prop("checked",currentStatus);
+
+        });
+
+
+        // 给批量删除按钮绑定单击响应函数
+        $("#batchRemoveBtn").click(function(){
+
+            // 获取被选中的itemBox数组长度
+            var length = $(".itemBox:checked").length;
+
+            // 如果长度为0，说明没有选择itemBox
+            if(length == 0) {
+                layer.msg("请至少选择一条！");
+                return ;
+            }
+
+            // 在全局作用域内创建roleIdArray
+            window.roleIdArray = new Array();
+
+            // 遍历$(".itemBox:checked")
+            $(".itemBox:checked").each(function(){
+
+                // 通过checkbox的roleid属性获取roleId值
+                var roleId = $(this).attr("roleId");
+
+                // 存入数组
+                window.roleIdArray.push(roleId);
+
+            });
+
+            // 调用函数打开模态框
+            showRemoveConfirmModal();
+        });
+
+        // 针对.removeBtn这样动态生成的元素对象使用on()函数方式绑定单击响应函数
+        // $("动态元素所依附的静态元素").on("事件类型","具体要绑定事件的动态元素的选择器", 事件响应函数);
+        $("#roleTableBody").on("click",".removeBtn", function(){
+            // 获取当前记录的roleId
+            var roleId = $(this).attr("roleId");
+
+            // 存入全局变量数组
+            window.roleIdArray = new Array();
+
+            window.roleIdArray.push(roleId);
+
+            // 打开模态框（后续所有操作都和批量删除一样）
+            showRemoveConfirmModal();
+        });
+
+        $("#roleTableBody").on("click",".editBtn",function(){
+
+            // 1.获取当前按钮的roleId
+            window.roleId = $(this).attr("roleId");
+
+            // 2.获取当前按钮所在行的roleName
+            var roleName = $(this).parents("tr").children("td:eq(2)").text();
+
+            // 3.修改模态框中文本框的value值，目的是在显示roleName
+            $("#roleNameInputEdit").val(roleName);
+
+            // 4.打开模态框
+            $("#editModal").modal("show");
+        });
+
+
+        $("#addBtn").click(function(){
+
+            $("#addModal").modal("show");
+
+        });
+
+        $("#addModalBtn").click(function(){
+
+            // 1.收集文本框内容
+            var roleName = $.trim($("#roleNameInput").val());
+
+            if(roleName == null || roleName == "") {
+                layer.msg("请输入有效角色名称！");
+                return ;
+            }
+
+            // 2.发送请求
+            $.ajax({
+                "url":"role/add",
+                "type":"post",
+                "data":{
+                    "name":roleName
+                },
+                "dataType":"json",
+                "success":function(response){
+
+                    var result = response.result;
+
+                    if(result == "SUCCESS") {
+                        layer.msg("操作成功！");
+
+                        // 3.操作成功重新分页
+                        // 前往最后一页
+                        showPage();
+                    }
+
+                    if(result == "FAILED") {
+                        layer.msg(response.message);
+                    }
+
+                    // 4.不管成功还是失败，关闭模态框
+                    $("#addModal").modal("hide");
+
+                    // 5.清理本次在文本框填写的数据
+                    $("#roleNameInput").val("");
+
+                },
+                "error":function(response){
+                    layer.msg(response.message);
+                }
+            });
+
+
+        });
+
+
+        $("#editModalBtn").click(function(){
+
+            // 1.获取文本框值
+            var roleName = $.trim($("#roleNameInputEdit").val());
+
+            if(roleName == null || roleName == "") {
+                layer.msg("请输入有效角色名称！");
+
+                return ;
+            }
+
+            // 2.发送请求
+            $.ajax({
+                "url":"role/update",
+                "type":"post",
+                "data":{
+                    "id":window.roleId,
+                    "name":roleName
+                },
+                "dataType":"json",
+                "success":function(response){
+                    var result = response.result;
+
+                    if(result == "SUCCESS") {
+                        layer.msg("操作成功！");
+
+                        // 3.操作成功重新分页
+                        showPage();
+                    }
+
+                    if(result == "FAILED") {
+                        layer.msg(response.message);
+                    }
+
+                    // 4.不管成功还是失败，关闭模态框
+                    $("#editModal").modal("hide");
+
+                }
+            });
+        });
+
+
+        $("#confirmModalBtn").click(function(){
+
+            var requestBody = JSON.stringify(window.roleIdArray);
+
+            $.ajax({
+                "url":"role/batch/remove",
+                "type":"post",
+                "data":requestBody,
+                "contentType":"application/json;charset=UTF-8",
+                "dataType":"json",
+                "success":function(response){
+
+                    var result = response.result;
+
+                    if(result == "SUCCESS") {
+                        layer.msg("操作成功！");
+
+                        // 如果删除成功，则重新调用分页方法
+                        showPage();
+                    }
+
+                    if(result == "FAILED") {
+                        layer.msg(response.message);
+                    }
+
+                    // 不管成功还是失败，都需要关掉模态框
+                    $("#confirmModal").modal("hide");
+
+                },
+                "error":function(response){
+                    layer.msg(response.message);
+                }
+            });
+
+        });
+
+
+
+
+        showPage();
+    })
+
+
+
+</script>

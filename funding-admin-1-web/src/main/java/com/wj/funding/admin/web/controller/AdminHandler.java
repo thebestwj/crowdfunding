@@ -14,12 +14,15 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -50,7 +53,10 @@ public class AdminHandler {
 
 
     @PostMapping("update")
-    public String update(adminDO adminDO){
+    public String update(@Valid adminDO adminDO, Errors errors){
+        if (errors.hasErrors()){
+
+        }
         System.out.println(adminDO.getLoginacct());
         System.out.println(adminDO.getUsername());
         System.out.println(adminDO.getUserpswd());
@@ -83,7 +89,6 @@ public class AdminHandler {
             Model m){
         PageInfo<adminDO> pageInfo = adminService.keyWordSearch(pageNum,pageSize,keyword);
         m.addAttribute(AdminConst.ATT_NAME_PAGE_INFO,pageInfo);
-
         return "admin-page";
     }
 

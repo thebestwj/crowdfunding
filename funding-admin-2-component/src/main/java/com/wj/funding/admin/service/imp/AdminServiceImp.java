@@ -6,7 +6,7 @@ import com.wj.funding.admin.mapper.adminDOMapper;
 import com.wj.funding.admin.model.adminDO;
 import com.wj.funding.admin.model.adminDOExample;
 import com.wj.funding.admin.service.AdminService;
-import com.wj.funding.admin.utils.MD5Tool;
+import com.wj.funding.admin.utils.UtilTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,7 +54,7 @@ public class AdminServiceImp implements AdminService {
 
         // 比较密码
         String realpw = admin.getUserpswd();
-        String pwmd5 = MD5Tool.md5(pw);
+        String pwmd5 = UtilTools.md5(pw);
         if(pwmd5.equals(realpw)) {
             // 如果两个密码相等那么说明登录能够成功，返回Admin对象
             return admin;
@@ -94,7 +94,7 @@ public class AdminServiceImp implements AdminService {
     @Override
     @Transactional
     public void saveAdmin(adminDO adminDO) {
-        String pw = MD5Tool.md5(adminDO.getUserpswd());
+        String pw = UtilTools.md5(adminDO.getUserpswd());
         adminDO.setUserpswd(pw);
         adminDO.setId(null);
         adminDOMapper.insert(adminDO);

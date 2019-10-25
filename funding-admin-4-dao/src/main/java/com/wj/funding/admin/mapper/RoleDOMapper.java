@@ -3,8 +3,13 @@ package com.wj.funding.admin.mapper;
 import com.wj.funding.admin.model.RoleDO;
 import com.wj.funding.admin.model.RoleDOExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Mapper
 public interface RoleDOMapper {
     long countByExample(RoleDOExample example);
 

@@ -10,7 +10,16 @@ import java.util.Map;
  *
  * @author thebestwj
  */
-public class MD5Tool {
+public class UtilTools {
+
+    /**
+     * 用于判断一个请求是否是异步请求
+     * @param request
+     * @return
+     */
+
+
+
     /**
      * 判断Map是否有效
      * @param map 待验证的Map

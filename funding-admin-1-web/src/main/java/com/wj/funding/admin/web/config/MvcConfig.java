@@ -15,7 +15,8 @@ public class MvcConfig extends WebMvcConfigurationSupport {
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/admin/**")
-                .excludePathPatterns("/admin/*/login");
+                .excludePathPatterns("/admin/*/login")
+                .addPathPatterns("/role/**");
 
         super.addInterceptors(registry);
     }
