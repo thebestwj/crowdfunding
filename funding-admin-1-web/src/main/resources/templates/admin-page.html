@@ -53,7 +53,7 @@
                         <td th:text="${user.username}"></td>
                         <td th:text="${user.email}"></td>
                         <td>
-                            <button  type="button" class="btn btn-success btn-xs"><i th:adminId="${user.id}" class=" glyphicon glyphicon-check"></i></button>
+                            <a th:href="@{'/assign/page/' + ${user.id}}"  type="button" class="btn btn-success btn-xs"><i th:adminId="${user.id}" class=" glyphicon glyphicon-check"></i></a>
                             <a th:href="@{'/admin/edit/' + ${user.id}}" type="button" class="btn btn-primary btn-xs"><i  class=" glyphicon glyphicon-pencil"></i></a>
                             <button  th:adminId="${user.id}" type="button" class="uniqueRemoveBtn btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
                         </td>

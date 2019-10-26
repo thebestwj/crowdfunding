@@ -32,4 +32,12 @@ public interface RoleDOMapper {
     int updateByPrimaryKeySelective(RoleDO record);
 
     int updateByPrimaryKey(RoleDO record);
+
+    List<RoleDO> selectAssignedRoleList(Integer id);
+
+    List<RoleDO> selectUnAssignedRoleList(Integer id);
+
+    void deleteOldAdminRelationship(Integer adminId);
+
+    void insertNewAdminRelationship( @Param("adminId")Integer adminId, @Param("roleIdList") List<Integer> roleIdList);
 }

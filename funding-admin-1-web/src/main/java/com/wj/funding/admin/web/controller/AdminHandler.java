@@ -1,6 +1,5 @@
 package com.wj.funding.admin.web.controller;
 
-import ch.qos.logback.core.encoder.EchoEncoder;
 import com.github.pagehelper.PageInfo;
 import com.wj.funding.admin.model.adminDO;
 import com.wj.funding.admin.result.ResultEntity;
@@ -8,18 +7,13 @@ import com.wj.funding.admin.service.AdminService;
 import com.wj.funding.admin.utils.AdminConst;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -130,11 +124,6 @@ public class AdminHandler {
     }
         session.setAttribute(AdminConst.ATT_NAME_LOGIN_ADMIN, admin);
         return "redirect:/admin/main";
-    }
-
-    @RequestMapping("main")
-    String adminmain(){
-        return "admin-main";
     }
 
     @RequestMapping("logout")

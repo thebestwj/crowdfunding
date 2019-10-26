@@ -16,4 +16,7 @@ public interface RoleService {
     List<RoleDO> getRoleListByIdList(List<Integer> roleIdList);
     void updateRole(RoleDO role);
     void addRole(RoleDO role);
+    List<RoleDO> getAssignedRoleList(Integer adminId);
+    List<RoleDO> getUnAssignedRoleList(Integer adminId);
+    void updateRelationship(Integer adminId, List<Integer> roleIdList);
 }

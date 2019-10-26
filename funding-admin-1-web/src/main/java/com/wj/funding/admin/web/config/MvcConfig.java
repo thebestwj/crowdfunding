@@ -16,7 +16,9 @@ public class MvcConfig extends WebMvcConfigurationSupport {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/admin/**")
                 .excludePathPatterns("/admin/*/login")
-                .addPathPatterns("/role/**");
+                .addPathPatterns("/role/**")
+                .addPathPatterns("/menu/**")
+                .addPathPatterns("/assign/**");
 
         super.addInterceptors(registry);
     }
@@ -26,9 +28,11 @@ public class MvcConfig extends WebMvcConfigurationSupport {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/reg").setViewName("reg");
+        registry.addViewController("/admin/main").setViewName("admin-main");
         registry.addViewController("/admin/to/login").setViewName("admin-login");
         registry.addViewController("/admin/to/add").setViewName("admin-add");
         registry.addViewController("/role/to/page").setViewName("role-page");
+        registry.addViewController("/menu/to/page").setViewName("menu-page");
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.wj.funding.admin.mapper.RoleDOMapper;
 import com.wj.funding.admin.model.RoleDO;
 import com.wj.funding.admin.model.RoleDOExample;
 import com.wj.funding.admin.service.RoleService;
+import com.wj.funding.admin.utils.UtilTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,5 +57,28 @@ public class RoleServiceImp implements RoleService {
     @Override
     public void addRole(RoleDO role) {
         roleDOMapper.insert(role);
+    }
+
+    @Override
+    public List<RoleDO> getAssignedRoleList(Integer adminId) {
+        return roleDOMapper.selectAssignedRoleList(adminId);
+    }
+
+    @Override
+    public List<RoleDO> getUnAssignedRoleList(Integer adminId) {
+        return roleDOMapper.selectUnAssignedRoleList(adminId);
+    }
+
+    @Override
+    public void updateRelationship(Integer adminId, List<Integer> roleIdList) {
+        // 1.删除全部旧数据
+        roleDOMapper.deleteOldAdminRelationship(adminId);
+
+        // 2.保存全部新数据
+        if(UtilTools.collectionEffective(roleIdList)) {
+            roleDOMapper.insertNewAdminRelationship(adminId, roleIdList);
+            System.out.println(roleIdList.toString());
+        }
+
     }
 }
