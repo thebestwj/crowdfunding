@@ -14,7 +14,6 @@
         <module>funding-admin-2-component</module>
         <module>funding-admin-3-common</module>
         <module>funding-admin-4-dao</module>
-        <module>funding-admin-reverse</module>
     </modules>
 
     <parent>
@@ -63,16 +62,5 @@
 
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

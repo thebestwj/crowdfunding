@@ -2,16 +2,16 @@
 <html lang="UTF-8">
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="@{/common/head.html}"></head>
+<head th:replace="@{common/head.html}"></head>
 <script type="text/javascript" src="ztree/jquery.ztree.all-3.5.min.js"></script>
 <script type="text/javascript" src="script/my-menu.js"></script>
 <body>
 
-<div th:include="@{/menu-modal.html}"></div>
-<div th:include="@{/common/nav.html}"></div>
+<div th:include="@{menu-modal.html}"></div>
+<div th:include="@{common/nav.html}"></div>
 <div class="container-fluid">
     <div class="row">
-        <div th:include="@{/common/sidebar.html}"></div>
+        <div th:include="@{common/sidebar.html}"></div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="panel panel-default">
                 <div class="panel-heading">

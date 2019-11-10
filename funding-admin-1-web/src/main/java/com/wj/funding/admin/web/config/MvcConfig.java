@@ -33,6 +33,7 @@ public class MvcConfig extends WebMvcConfigurationSupport {
         registry.addViewController("/admin/to/add").setViewName("admin-add");
         registry.addViewController("/role/to/page").setViewName("role-page");
         registry.addViewController("/menu/to/page").setViewName("menu-page");
+        registry.addViewController("/error").setViewName("system-error");
     }
 
     @Override

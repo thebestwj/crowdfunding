@@ -7,19 +7,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="funding-admin-4-dao" />
+        <module name="funding-admin-1-web" />
+        <module name="funding-admin-3-common" />
         <module name="funding-admin-2-component" />
         <module name="fundingadminreverse" />
-        <module name="funding-admin-3-common" />
         <module name="funding-admin-reverse" />
-        <module name="funding-admin-1-web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fundingadminreverse" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="funding-admin-1-web" options="-parameters" />
       <module name="funding-admin-2-component" options="-parameters" />
       <module name="funding-admin-3-common" options="-parameters" />
+      <module name="funding-admin-4-dao" options="-parameters" />
       <module name="funding-admin-reverse" options="-parameters" />
       <module name="fundingadminreverse" options="-parameters" />
     </option>
